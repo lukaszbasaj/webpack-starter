@@ -24,7 +24,11 @@ module.exports = {
     ]),
     new HtmlWebpackPlugin({
       template: Path.resolve(__dirname, '../src/index.html')
-    })
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template : Path.resolve(__dirname, '../src/index.pug'),
+      inject   : true
   ],
   resolve: {
     alias: {
@@ -37,6 +41,15 @@ module.exports = {
         test: /\.mjs$/,
         include: /node_modules/,
         type: 'javascript/auto'
+      },
+      {
+        test: /\.pug$/,
+        loaders: [{
+          loader: 'apply-loader'
+        }, {
+          loader: 'pug-loader',
+          options: { pretty: true }
+        }]
       },
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
