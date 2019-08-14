@@ -29,6 +29,7 @@ module.exports = {
       filename: 'index.html',
       template : Path.resolve(__dirname, '../src/index.pug'),
       inject   : true
+    })
   ],
   resolve: {
     alias: {
@@ -50,15 +51,6 @@ module.exports = {
           loader: 'pug-loader',
           options: { pretty: true }
         }]
-      },
-      {
-        test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]'
-          }
-        }
       },
     ]
   }
