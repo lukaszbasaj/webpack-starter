@@ -1,5 +1,7 @@
-$body-color: blue;
-
-body {
-  color: $body-color;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
