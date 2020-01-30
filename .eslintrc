@@ -1,13 +1,25 @@
 {
   "env": {
-    "browser": true,
-    "node": true
+      "browser": true,
+      "es6": true
+  },
+  "extends": "eslint:recommended",
+  "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
   },
   "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module"
+      "ecmaVersion": 2018,
+      "sourceType": "module"
   },
   "rules": {
-    "semi": 2
+      "no-console": "error",
+      "no-empty": "off",
+      "no-irregular-whitespace": "off",
+      "eol-last": ["error", "always"],
+      "prefer-const": "error",
+      "complexity": ["error", { "max": 7 }],
+      "no-warning-comments": ["error", { "terms": ["todo"]}],
+      "max-lines-per-function": ["error", {"max": 20, "skipBlankLines": true, "skipComments": true}]
   }
 }
